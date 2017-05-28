@@ -230,9 +230,11 @@ footer {
   }
 }
 
-@media print, screen and (max-width: 720px) {
+@media print, screen and (max-width: 510px) {
   body {
     word-wrap:break-word;
+    color: #000;
+    background-image: url("https://lh3.googleusercontent.com/CL-yct8LRlq-rzKyDipwTCgtFJl3TxNgrys38qaAw738hFRrOdgxRFJ7cICBOZ5wYNa2J7G4Q7hOtME4E3DZ_rnTY2yPk62z7nkkKzn3tacSYpFskXPBdzM0WgK7OBvCAOUdONbCJmCy0bJCXzI6BB-5pYRhyR-eBTOAFAEuCeVgn_gU3H99mzsLXkiB0oxG21ItNlt0bFwDv9QnzOqxIpUgL-M4A04uFrHqdCBXZwHSmD72bLJZzEcKJGsW54uL0kv77AQLbap4en62EBaWjaO89jgpV29oAxdgSixuej6aYULmwbqL8zWK5PZ25HWjg8pTOTRdNWutuYpoSNqUJOiyG4d3_AXB2VbeuhaAkfAeBJPyawYPRhpvxUVUv-6YaGeYXsbnPu_yLy09p_EVAdY7lW7aK11gY7fXficXWDwFaH82PMaRvjXlGQJHSyGLrotDJbQsX_OA_nxWk3TTL3Sd4NdyfDnZy_uUaYXA_NFBZk_-LUoZkIug8XqdgYLBCA6NYgiKkDFmtr6yTCC2vGd-K-Yv5DGQ_Ieg2OD4v9rQK3IIzAMnWku_IJ93ZlgjE7Z9hKzW3NIpHTB077UYE4TYhvQs27Tr4S7SpiBIlP6DKjlg5ZTc=w510-h680-no");
   }
 
   header {
@@ -242,6 +244,10 @@ footer {
 
   pre, code {
     word-wrap:normal;
+  }
+
+  section {
+    display: none;
   }
 }
 

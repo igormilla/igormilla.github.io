@@ -7,7 +7,7 @@ layout: default
             <div class="dummy">
               <b><span class="big">Hi!</span></b> {{ site.description }}
               <a href="mailto:{{ site.email }}"><b>{{ site.email }}</b></a>. <br><br>
-              ♨ <b><span class="big">Fun pict ... </span></b><br>
+                <b><span class="big">Fun pict ... </span></b><br>
 
               <div class="photos">
                 <a href="https://www.instagram.com/p/BCI1dwchQX5/" class="p0 photo" target="_blank">
@@ -33,24 +33,17 @@ layout: default
               </div><br>
 
               <div class="dummy blogpost">
-                ✍ <b><span class="big">Writings.</span></b>
+                <b><span class="big">Writings.</span></b>
               </div>
-            </div><p></p><p></p>
-              <ul class="post-list">{% for post in paginator.posts %}
-                <li class="titlepost">
-                  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                </li>
-                <li class="datepost">
-                  <span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
-                </li>{% endfor %}
-              </ul>
+            </div>
+            <ul class="post-list">{% for post in paginator.posts %}
+              <li class="titlepost">
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              </li>
+              <li class="datepost">
+                <span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
+              </li>{% endfor %}
+            </ul>
           </div>
-        </div>{% if paginator.previous_page %}
-          <a href="{{ paginator.previous_page_path }}">
-            <b><span class="big">Balik Lagi</span></b>
-          </a>{% else %}{% endif %}{% if paginator.next_page %}
-          <a href="{{ paginator.next_page_path }}">
-            <b><span class="big">Lanjut</span></b>
-          </a>{% else %}{% endif %}
-        {% include nav.html %}
+        </div>
       </div>

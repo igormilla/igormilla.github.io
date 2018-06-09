@@ -1,269 +1,49 @@
 /**
- * Site header
+ * Code formatting
  */
-.site-header {
-    border-bottom: 1px solid #E5E5E5;
-    position: relative;
-    background-color: #F5F5F5;
-    text-align: center;
-}
-
-/**
- * Site nav for web and mobile view
- */
-.site-nav {
-    margin-right: 10px;
-
-    .page-link {
-        color: #161616;
-        line-height: $base-line-height;
-        font-size: 20px;
-        // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-        }
-    }
-}
-
-/**
- * Add new config
- * .big is underline style for first word or more
- */
-.big {
-    font-size: 18px;
-    background-size: 20px;
-}
-
-.big.plusbig {
-    font-size: 1.3em;
-    color: #505050;
-}
-
-.big.bg {
-    background-color: #F6FFAA;
-    background-size: 0px;
-}
-
-/**
- * Trigger for align center ~.~
- */
-.trigger {
-    text-align: center;
-}
-
-/**
- * All about of content
- */
-.page-content {
-    padding: $spacing-unit 0 0;
-}
-
-@include media-query($on-laptop) {
-    .page-content {
-        padding-bottom: $spacing-unit;
-    }
-}
-
-@include media-query($on-palm) {
-    .page-content {
-        padding-bottom: $spacing-unit;
-    }
-}
-
-.page-heading {
-    font-size: 20px;
-}
-
-.post-list {
-    margin-left: 0;
-    list-style: none;
-}
-
-.post-meta {
-    font-size: $small-font-size;
-    color: $date-color;
-}
-
-.post-link {
-    display: block;
-    font-size: 17px;
-    font-family: $vt323;
-}
-
-.titlepost {
-    height: $spacing-unit;
-    font-family: $cutive;
-    width: 90%;
-    float: left;
-    padding-top: $spacing-unit / 6;
-}
-
-.datepost {
-    height: $spacing-unit;
-    font-family: $vt323;
-    width: 100px;
-    float: left;
-    border-bottom: 1px dashed #E1E2E3;
-    padding-top: $spacing-unit / 6;
-    text-align: left;
-}
-
-.content-col-wrapper {
-    font-size: $spacing-unit / 2;
-    color: #6C6C6C;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
-}
-
-.content-col {
-    float: left;
-    margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-    width: 95%;
-}
-
-@include media-query($on-laptop) {
-    .titlepost,
-    .datepost {
-        border-bottom: 0px;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-        height: -webkit-calc(20% - (#{$spacing-unit} / 2));
-        height:         calc(20% - (#{$spacing-unit} / 2));
-        text-align: left;
-    }
-
-    .content-col {
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-        height: -webkit-calc(20% - (#{$spacing-unit} / 2));
-        height:         calc(20% - (#{$spacing-unit} / 2));
-        text-align: left;
-    }
-}
-
-@include media-query($on-palm) {
-    .content-col {
-        float: center;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
-}
-
-/**
- * Some style for index. #important
- */
-.dummy {
-    font-size: 17px;
-    letter-spacing: -1px;
-    margin-bottom: 3px;
-    float: left;
-    color: #505050;
-    &,
-    &:visited {
-        color: #505050;
-    }
-    .blogpost {
-        text-align: left;
-    }
-}
-
-.home {
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-/**
- * Posts
- */
-.post-header {
-    margin-bottom: $spacing-unit + 10;
-}
+//@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
 
 .post-title {
-    font-size: 1.5em;
-    font-family: $halant;
-    letter-spacing: -1px;
-    line-height: 1;
-    text-align: center;
-    @include media-query($on-laptop) {
-        font-size: 1.5em;
-        text-align: center;
-    }
-}
-
-.post-line {
-    font-size: 18px;
-    border-bottom: solid 1px black;
-    background-size: 20px;
-    content: "";
-    height: 5px;
-    width: 20px;
-    margin: $spacing-unit + 10 auto 0;
+  text-align: center;
+  font-size: 1.7em;
 }
 
 .post-detail {
-    font-family: $cutive;
-    font-size: 13.5px;
-    text-align: center;
-    margin-top: -10px;
+  text-align: left;
+  font-size: small;
 }
 
-.post-content {
-    margin-bottom: $spacing-unit;
-    font-family: $cutive;
+.post-detail #mode-switch {
+  font-size: 30px;
 }
 
-.post-next {
-    width: 50%;
-    float: left;
-    margin: 1px 0;
+hr {
+  border: groove 0.5px;
 }
 
-.post-prev {
-    width: 50%;
-    float: left;
-    margin: 1px 0;
-    text-align: right;
+body.dark code, body.dark pre {
+  background-color: #313131;
 }
 
-/**
- * Site footer
- */
-.site-footer {
-    border-top: 1px solid #E6E6E6;
-    padding: 20px 0;
-    background-color: #F9F9F9;
+pre,
+code {
+  font-size: 15px;
+  border-radius: 3px;
+  background-color: #bbb;
+  font-family: 'Cutive Mono', monospace;
 }
 
-.footer-heading {
-    font-size: 18px;
-    margin-bottom: $spacing-unit / 2;
+code {
+  padding: 1px 5px;
 }
 
-.footer-col-wrapper {
-    font-size: 15px;
-    color: #4B4B4B;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
-}
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
 
-.footer-col {
-    float: left;
-    margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-}
-
-@include media-query($on-palm) {
-    .footer-col {
-        float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-        text-align: -webkit-center;
-    }
-}
-
-.footer-text {
-    font-size: 14px;
-    color: #4B4B4B;
-    text-align: center;
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
 }

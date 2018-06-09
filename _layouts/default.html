@@ -1,13 +1,65 @@
 <!DOCTYPE html>
-<html lang="eng">
-{% include head.html %}
-  <body>
-{% include header.html %}
-  <div class="page-content">
-    <div class="wrapper">
-{{ content }}
-    </div>
-  </div>
-{% include footer.html %}
- </body>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ site.author }}">
+    <meta property="og:url"
+          content="{% if page.url %}{{ page.url }}{% else %}{{ site.url }}{% endif %}">
+    <meta property="og:title"
+          content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description"
+          content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:type" content="blog">
+    <link href="{{ "
+    /css/main.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css">
+    <link href="/favicon.png" rel="icon">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "
+    /feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+</head>
+<body>
+<div class="container">
+    {{ content }}
+</div>
+<script>
+    const supportsStorage = 'localStorage' in window;
+    const modeSwitch = document.getElementById("mode-switch");
+    let firstTime = true;
+    let darkModeOn = true;
+    if (supportsStorage) {
+        darkModeOn = localStorage.getItem('darkMode') == 'true';
+        localStorage.setItem('darkMode', darkModeOn);
+        switchMode();
+        firstTime = false;
+    }
+
+    function switchMode() {
+
+        if (firstTime) {
+            darkModeOn = !darkModeOn;
+        }
+
+        if (darkModeOn) {
+            modeSwitch.classList.remove('dark');
+            modeSwitch.classList.add('light');
+            document.body.classList.remove('dark');
+        } else {
+            modeSwitch.classList.add('dark');
+            modeSwitch.classList.remove('light');
+            document.body.classList.add('dark');
+        }
+
+        darkModeOn = !darkModeOn;
+        if (!firstTime) {
+            if (supportsStorage) {
+                localStorage.setItem('darkMode', darkModeOn);
+            }
+        }
+    }
+
+    modeSwitch.addEventListener('click', switchMode);
+</script>
+</body>
 </html>

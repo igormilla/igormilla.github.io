@@ -1,18 +1,35 @@
 ---
-layout: layout
+layout: default
 ---
+<div class="container-center-post">
     <header class="post-header">
-      <h1 class="post-title">{{ page.title }}</h1>
-      <div class="post-detail">
-        {{ page.date | date: "%-d %b %Y" }}{% if page.author %} • Written by <a href="https://github.com/{{  site.social_username }}" target="_blank">{{ page.author }}</a>{% endif %}{% if page.meta %} {{ page.meta }}{% endif %}
-      </div>
-      <div class="post-line"></div>
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="post-detail">
+            <hr/>
+            <span id="mode-switch" class="dark"></span>
+            <div class="post-date-author">
+                {{ page.date | date: "%-d %b %Y" }}
+                {% if page.author %} • by <a href="/" target="_self">{{ page.author }}</a>{% endif
+                %}
+            </div>
+        </div>
     </header>
-  	  {{ content }}
-      <hr>
-      <div class="post-next">{% if page.next %}
-          <a href="{{ page.next.url }}">{{ page.next.title }}</a>{% endif %}
-      </div>
-      <div class="post-prev">{% if page.previous %}
-          <a href="{{ page.previous.url }}">{{ page.previous.title }}</a>{% endif %}
-      </div>
+    {{ content }}
+
+    {% if page.next or page.previous %}
+    <h3>Another posts</h3>
+    <ul>
+        {% if page.next %}
+        <li>
+            <a href="{{ page.next.url }}">{{ page.next.title }}</a>
+        </li>
+        {% endif %}
+
+        {% if page.previous %}
+        <li>
+            <a href="{{ page.previous.url }}">{{ page.previous.title }}</a>
+        </li>
+        {% endif %}
+    </ul>
+    {% endif %}
+</div>

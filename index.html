@@ -1,26 +1,35 @@
 ---
 layout: default
 ---
-      <div class="home">
-        <div class="content-col-wrapper">
-          <div class="content-col">
-            <div class="dummy">
-              <b><span class="big">Hi!</span></b> {{ site.description }}
-              <a href="mailto:{{ site.email }}"><b>{{ site.email }}</b></a>.
-              <br>
-              <br>
-              <div class="dummy blogpost">
-                <b><span class="big">Writings.</span></b>
-              </div>
-            </div>
-            <ul class="post-list">{% for post in paginator.posts %}
-              <li class="titlepost">
-                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-              </li>
-              <li class="datepost">
-                <span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
-              </li>{% endfor %}
-            </ul>
-          </div>
-        </div>
-      </div>
+<div class="container-center">
+    <h1 class="site-title">Igor Milla<span id="mode-switch" class="dark"></span></h1>
+    I&rsquo;m currently working as Senior Software Developer at
+    <a href="https://telescope.tv/" target="_blank" rel="noopener">Telescope</a>.
+    <br/>
+    I have a soft spot for an earl grey tea, bold typography, and Thonet chair No. 14.
+    <h3>Communication</h3>
+    <ul>
+        <li><b>Social</b>&hairsp;:
+            <a href="https://github.com/igormilla" target="_blank" rel="noopener">
+                GitHub</a>,
+            <a href="https://twitter.com/igormilla" target="_blank" rel="noopener">
+                Twitter</a>,
+            <a href="https://www.linkedin.com/in/igormilla" target="_blank" rel="noopener">
+                LinkedIn</a>.
+        </li>
+        <li><b>Email</b>&hairsp;: hi at this domain.</li>
+    </ul>
+
+    <h3>Posts</h3>
+    <ul>
+        {% for post in paginator.posts %}
+        <li>
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                {{ post.title }}
+            </a>
+            &middot;
+            <small>{{ post.date | date: "%b %-d, %Y" }}</small>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

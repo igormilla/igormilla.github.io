@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="{{ site.author }}">
+    <meta name="description"
+          content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="theme-color" content="#f95758">
     <meta property="og:url"
           content="{% if page.url %}{{ page.url }}{% else %}{{ site.url }}{% endif %}">
     <meta property="og:title"
@@ -15,7 +18,9 @@
     <meta property="og:type" content="blog">
     <link href="{{ "
     /css/main.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css">
+
     <link href="/favicon.png" rel="icon">
+    <link rel="manifest" href="/manifest.json">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "
     /feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 </head>

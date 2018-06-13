@@ -15,11 +15,10 @@ but I kept getting `Unauthorized` exception:
     Uploading 1 gem to Nexus...
     Unauthorized
 
-In our nexus setup we have [User Tokens][2] enabled, and the part on how
-to configure `nexus-gem` to work with User Tokens was completely missing
-from documentation. After some digging I found that `nexus-gem` has a config file
+We have [User Tokens][2] enabled in our Nexus configuration. But documentation was
+completely lacking any information on how to configure `nexus-gem` to work with User Tokens.
+After some digging I found that `nexus-gem` has a config file located
 at `~/.gem/nexus`, which looked like this:
-
 
     ---
     :url: https://nexus.site.com/repository/gems
@@ -41,10 +40,11 @@ Click `Access user token` button, copy the code just under the line:
 
 and paste it inside `~/.gem/nexus` file:
 
-
     ---
     :url: https://nexus.site.com/repository/gems
     :authorization: Basic <YOUR USER TOKEN>=
+
+And that's it! Now you should be able to push gems to your Nexus.
 
 [1]: https://help.sonatype.com/repomanager2/ruby%2C-rubygems-and-gem-repositories
 [2]: https://help.sonatype.com/repomanager3/security/security-setup-with-user-tokens

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="container-center">
+    <h1 class="site-title">Archive<span id="mode-switch" class="dark"></span></h1>
+    <ul>
+        {% for post in site.posts %}
+        <li>
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                {{ post.title }}
+            </a>
+            &middot;
+            <small>{{ post.date | date: "%b %-d, %Y" }}</small>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

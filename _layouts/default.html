@@ -28,43 +28,9 @@
 <div class="container">
     {{ content }}
 </div>
-<script>
-    const supportsStorage = 'localStorage' in window;
-    const modeSwitch = document.getElementById("mode-switch");
-    let firstTime = true;
-    let darkModeOn = true;
-    if (supportsStorage) {
-        darkModeOn = localStorage.getItem('darkMode') == 'true';
-        localStorage.setItem('darkMode', darkModeOn);
-        switchMode();
-        firstTime = false;
-    }
 
-    function switchMode() {
+{% include night_mode.html %}
+{% include analytics.html %}
 
-        if (firstTime) {
-            darkModeOn = !darkModeOn;
-        }
-
-        if (darkModeOn) {
-            modeSwitch.classList.remove('dark');
-            modeSwitch.classList.add('light');
-            document.body.classList.remove('dark');
-        } else {
-            modeSwitch.classList.add('dark');
-            modeSwitch.classList.remove('light');
-            document.body.classList.add('dark');
-        }
-
-        darkModeOn = !darkModeOn;
-        if (!firstTime) {
-            if (supportsStorage) {
-                localStorage.setItem('darkMode', darkModeOn);
-            }
-        }
-    }
-
-    modeSwitch.addEventListener('click', switchMode);
-</script>
 </body>
 </html>

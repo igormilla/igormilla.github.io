@@ -7,6 +7,13 @@
   font-size: 1.7em;
 }
 
+h2 {
+  border-bottom: none;
+  &.footer-links{
+    border-bottom: 1px dashed;
+  }
+}
+
 .post-detail {
   text-align: left;
   font-size: small;

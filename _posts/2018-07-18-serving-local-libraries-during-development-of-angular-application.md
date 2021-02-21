@@ -9,15 +9,15 @@ description: "Using local angular libraries while serving local angular applicat
 ---
 
 Recently I was working on a project, which consisted of multiple separate angular apps, with a handful of
-angular libraries of shared code. The project used angular 5, which doesn't have any native tools for generating libraries, [yet][1]{:target="_blank"}. 
-So, we had to use [ng-packagr][2]{:target="_blank"} to generate our custom angular libraries. 
+angular libraries of shared code. The project used angular 5, which doesn't have any native tools for generating libraries, [yet][1]{:target="_blank", :rel="noreferrer"}. 
+So, we had to use [ng-packagr][2]{:target="_blank", :rel="noreferrer"} to generate our custom angular libraries. 
 
 The main problem with such project architecture is that it makes local development into a constant juggling of multiple
 terminal windows, where you try to build one project just to pull it immediately into a different one. 
 
 I've seen it done in many different ways. Some of them are worth than another, some are better.
 
-#### Bad
+## Bad
 
 ```
     ~ $ cd lib                   # in a library
@@ -35,7 +35,7 @@ I've seen it done in many different ways. Some of them are worth than another, s
  It's a terrible idea, even if you use pre-release versions there is still no justification 
  in polluting your package manager with a ton of dev versions of questionable stability.
  
-#### Better
+## Better
 
 ```
     ~ $ cd lib                     # in a library
@@ -52,7 +52,7 @@ I've seen it done in many different ways. Some of them are worth than another, s
  
  **Cons**: You need to `pack` and reinstall a new library version every time you make any changes
 
-#### Good
+## Good
 
 ```
     ~ $ cd ../lib                    # in a library
@@ -66,9 +66,9 @@ I've seen it done in many different ways. Some of them are worth than another, s
 The main benefit of this option is that you will be able to fully benefit from a livereload server, 
 as you will be able to focus on developing a library, and see changes in real time in your app running live in a browser.
 
-##### Note
+## Note
 
-Currently, there is an [open bug][3]{:target="_blank"} in a `watchpack` package, used by `ng serve`. 
+Currently, there is an [open bug][3]{:target="_blank", :rel="noreferrer"} in a `watchpack` package, used by `ng serve`. 
 This bug prevents livereload to pick up changes in symlinked directories in node_modules. 
 As a workaround, you just need to edit `node_modules\watchpack\lib\DirectoryWatcher.js` file in your app and 
 change `followSymlinks` from `false` to `true`.

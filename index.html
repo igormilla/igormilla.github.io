@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="container-center">
     <h1 class="site-title">Igor Milla<span id="mode-switch" class="dark"></span></h1>
-    &nbsp;&nbsp;&nbsp;&nbsp;I&rsquo;m currently working as Solutions Architect at
+    &nbsp;&nbsp;&nbsp;&nbsp;I&rsquo;m currently working as Product Lead at
     <a href="https://telescope.tv/" target="_blank" rel="noopener">Telescope Inc</a>. 
     I mostly build things that live on the internet.  
     I'm passionate about dev/build/deploy tools, coding standards, 
@@ -12,28 +12,24 @@ layout: default
     &nbsp;&nbsp;&nbsp;&nbsp;I also enjoy mountain hiking and backpacking, landscape photography, 
     and the company of a <a href="https://www.goodreads.com/igormilla" target="_blank" rel="noopener">good book</a>. 
     <br/>
-    <h3>Communication</h3>
+    <h2>Communication</h2>
     <ul>
         <li><b>Social</b>&hairsp;:
             <a href="https://github.com/igormilla" target="_blank" rel="noopener">
                 GitHub</a>,
-            <a href="https://twitter.com/igormilla" target="_blank" rel="noopener">
-                Twitter</a>,
             <a href="https://www.linkedin.com/in/igormilla" target="_blank" rel="noopener">
                 LinkedIn</a>.
         </li>
         <li><b>Email</b>&hairsp;: hi at this domain.</li>
     </ul>
 
-    <h3>Posts</h3>
+    <h2>Posts</h2>
     <ul>
         {% for post in paginator.posts %}
         <li>
             <a href="{{ post.url | prepend: site.baseurl }}">
                 {{ post.title }}
             </a>
-            &middot;
-            <small>{{ post.date | date: "%b %-d, %Y" }}</small>
         </li>
         {% endfor %}
     </ul>

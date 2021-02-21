@@ -32,14 +32,16 @@ h1, h2, h3 {
 }
 
 h2 {
-  padding-bottom: 5px;
-  border-bottom: 1px dashed;
+  padding-bottom: 5px;  
   font-size: 1.17em;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
+  &.home{
+    border-bottom: 1px dashed;
+  }
 }
 
 .container {

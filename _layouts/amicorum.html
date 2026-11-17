@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%- comment -%}
+  Amicorum's own pages: the app's paper style, and deliberately no analytics
+  or third-party scripts (the app promises none, so its pages don't either).
+{%- endcomment -%}
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}">
+    <meta name="theme-color" content="#f6eedb">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:image" content="{{ site.url }}/amicorum/images/icon.png">
+    <link rel="icon" href="/amicorum/images/icon.png">
+    <style>
+        :root { --paper: #f6eedb; --card: #fbf6ea; --ink: #2e2418; --soft: #4a3d2c; --muted: #7a6a55; --accent: #9c3b2a; --rule: #d9cbb0; }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: var(--paper); color: var(--ink); font: 18px/1.6 Georgia, "Times New Roman", serif; }
+        main { max-width: 680px; margin: 0 auto; padding: 40px 20px 64px; }
+        a { color: var(--accent); }
+        .label { font-variant: small-caps; letter-spacing: .14em; color: var(--accent); font-size: 15px; }
+        h1 { font-size: 44px; font-weight: normal; margin: 4px 0 4px; line-height: 1.15; }
+        h2 { font-size: 23px; font-weight: normal; margin: 36px 0 8px; border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+        p, li { color: var(--soft); }
+        .lead { font-size: 21px; font-style: italic; color: var(--ink); }
+        .back { font-size: 15px; text-decoration: none; }
+        footer { margin-top: 56px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 15px; color: var(--muted); }
+        footer a { margin-right: 14px; }
+        img { max-width: 100%; height: auto; display: block; }
+    </style>
+</head>
+<body>
+<main>
+    <a class="back" href="/projects/">← Projects</a>
+    {{ content }}
+    <footer>
+        <a href="/amicorum/">Amicorum</a>
+        <a href="/amicorum/privacy/">Privacy</a>
+        <a href="/">igormilla.com</a>
+    </footer>
+</main>
+</body>
+</html>
